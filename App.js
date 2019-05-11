@@ -1,6 +1,8 @@
 import React from 'react';
-import { AppLoading, Asset } from 'expo';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppLoading, Font, Asset } from "expo";
+import { StatusBar } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import TabNaviagation from './navigation/TabNavigation';
 
 export default class App extends React.Component {
   state = {
@@ -12,6 +14,9 @@ export default class App extends React.Component {
   handleLoaded = () => this.setState({ loaded: true });
 
   loadAssets = async () => {
+    await Font.loadAsync({
+      ...Ionicons.font
+    });
     await Asset.loadAsync([
 
     ]);
@@ -20,24 +25,15 @@ export default class App extends React.Component {
   render() {
     const { loaded } = this.state;
     if (loaded) {
-      return (
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-        </View>
-      );
+      return <TabNaviagation />;
     } else {
       return (
-        <AppLoading startAsync={this.loadAssets} onFinish={this.handleLoaded} onError={this.handleError} />
+        <AppLoading 
+          startAsync={this.loadAssets} 
+          onFinish={this.handleLoaded} 
+          onError={this.handleError}
+        />
       );
     }
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
