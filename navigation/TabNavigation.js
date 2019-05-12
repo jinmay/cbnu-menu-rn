@@ -1,10 +1,10 @@
-import React from 'react';
-import { Platform } from 'react-native';
+import React from "react";
+import { Platform } from "react-native";
 import { createBottomTabNavigator, createAppContainer } from "react-navigation";
-import MenuScreen from '../screens/Menu';
-import WeatherScreen from '../screens/Weather';
+import MenuScreen from "../screens/Menu";
+import WeatherScreen from "../screens/Weather";
 import TabBarIcon from "../components/TabBarIcon";
-import { createStack } from './config';
+import { createStack } from "./config";
 
 const TabNavigation = createBottomTabNavigator(
   {
