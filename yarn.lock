@@ -4819,6 +4819,11 @@ react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
 
+react-native-really-awesome-button@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-really-awesome-button/-/react-native-really-awesome-button-1.4.2.tgz#db25835f4eb3abe8ac04491db6a509777785c8c8"
+  integrity sha512-di2oPh0PnRGBLcCQ25v3OSplG1g9yFCd31ZvMQe6yLaMyq9yUb9o/Ot85Kj9tegHx1bmVda1zEuFHZLvYBBRFA==
+
 react-native-reanimated@1.0.0-alpha.11:
   version "1.0.0-alpha.11"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.0.0-alpha.11.tgz#b78c839bae878d149561b56a3c750414957ea86d"

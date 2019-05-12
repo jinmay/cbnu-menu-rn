@@ -3,7 +3,7 @@ import MenuPresenter from './MenuPresenter';
 
 export default class MenuContainer extends Component {
   state = {
-    loaded: false
+    loaded: true
   }
   render() {
     const { loaded } = this.state;
