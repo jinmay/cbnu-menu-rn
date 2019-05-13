@@ -3,27 +3,37 @@ import { Text } from "react-native";
 import styled from "styled-components";
 import Loader from "../../components/Loader";
 import DetailBtn from "../../components/DetailBtn";
+import MenuSlider from "../../components/MenuSlider";
 
 const Container = styled.ScrollView`
   flex: 1;
   background-color: black;
 `;
 
-const DetailContainer = styled.TouchableOpacity`
-  background-color: skyblue;
-  padding: 5px;
-  border-radius: 2.5px;
-  align-self: flex-start;
+const Dorm = styled.View``;
+
+const DormTitle = styled.Text`
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
 `;
 
-const Detail = styled.Text`
+const DormView = styled.ScrollView``;
+
+const DormContent = styled.Text`
   color: white;
 `;
 
 const MenuPresenter = ({ loaded }) =>
   loaded ? (
     <Container>
-      <DetailBtn />
+      {/* <DetailBtn /> */}
+      <Dorm horizontal>
+        <DormTitle>중문기숙사</DormTitle>
+        <DormView horizontal>
+          <DormContent>[아침]</DormContent>
+        </DormView>
+      </Dorm>
     </Container>
   ) : (
     <Loader />
