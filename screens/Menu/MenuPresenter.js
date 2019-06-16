@@ -8,7 +8,11 @@ const Container = styled.View``;
 
 const Upper = styled.View`
   flex-grow: 10;
-  height: 40%;
+  height: 38%;
+`;
+
+const Day = styled.Text`
+  margin-left: 13px;
 `;
 
 const Title = styled.Text`
@@ -44,12 +48,13 @@ class MenuPresenter extends Component {
   };
 
   render() {
-    const { dorm, loaded, main, yangsung, yangjin } = this.props;
+    const { dorm, day, loaded, main, yangsung, yangjin } = this.props;
     const dormName = this.getDormName(dorm);
 
     return loaded ? (
       <Container>
         <Upper />
+        <Day>{day}</Day>
         <Title>{dormName}</Title>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <MenuCard
