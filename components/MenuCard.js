@@ -18,7 +18,8 @@ class MenuCard extends Component {
     const theme = {
       Card: {
         containerStyle: {
-          width: 200
+          width: 200,
+          height: 230
         }
       }
     };
