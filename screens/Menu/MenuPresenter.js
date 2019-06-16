@@ -33,13 +33,24 @@ class MenuPresenter extends Component {
     this.props.onChangeDorm(dorm);
   };
 
+  getDormName = dorm => {
+    if (dorm == "main") {
+      return "중문기숙사";
+    } else if (dorm == "yangsung") {
+      return "양성재";
+    } else if (dorm == "yangjin") {
+      return "양진재";
+    }
+  };
+
   render() {
     const { dorm, loaded, main, yangsung, yangjin } = this.props;
+    const dormName = this.getDormName(dorm);
 
     return loaded ? (
       <Container>
         <Upper />
-        <Title>중문기숙사</Title>
+        <Title>{dormName}</Title>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <MenuCard
             dorm={dorm}
