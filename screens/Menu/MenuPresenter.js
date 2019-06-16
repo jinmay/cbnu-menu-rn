@@ -1,42 +1,51 @@
-import React from "react";
-import { Text } from "react-native";
+import React, { Component } from "react";
 import styled from "styled-components";
 import Loader from "../../components/Loader";
-import DetailBtn from "../../components/DetailBtn";
-import MenuSlider from "../../components/MenuSlider";
+import MenuCard from "../../components/MenuCard";
+import DormBtnList from "../../components/DormBtnList";
 
-const Container = styled.ScrollView`
-  flex: 1;
-  background-color: black;
+const Container = styled.View``;
+
+const Upper = styled.View`
+  flex-grow: 10;
+  height: 40%;
 `;
 
-const Dorm = styled.View``;
-
-const DormTitle = styled.Text`
-  color: white;
-  font-size: 18px;
+const Title = styled.Text`
+  font-size: 20px;
   font-weight: 600;
+  margin-left: 13px;
 `;
 
-const DormView = styled.ScrollView``;
+const ScrollView = styled.ScrollView``;
 
-const DormContent = styled.Text`
-  color: white;
+const WrapperView = styled.View`
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-const MenuPresenter = ({ loaded }) =>
-  loaded ? (
-    <Container>
-      {/* <DetailBtn /> */}
-      <Dorm horizontal>
-        <DormTitle>중문기숙사</DormTitle>
-        <DormView horizontal>
-          <DormContent>[아침]</DormContent>
-        </DormView>
-      </Dorm>
-    </Container>
-  ) : (
-    <Loader />
-  );
+class MenuPresenter extends Component {
+  render() {
+    const { loaded, main } = this.props;
+
+    return loaded ? (
+      <Container>
+        <Upper />
+        <Title>중문기숙사</Title>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <MenuCard main={main} />
+        </ScrollView>
+        <WrapperView>
+          <DormBtnList />
+        </WrapperView>
+      </Container>
+    ) : (
+      <Loader />
+    );
+  }
+}
 
 export default MenuPresenter;

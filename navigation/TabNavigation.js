@@ -9,7 +9,8 @@ import { createStack } from "./config";
 const TabNavigation = createBottomTabNavigator(
   {
     Menu: {
-      screen: createStack(MenuScreen, "기숙사"),
+      // screen: createStack(MenuScreen, "기숙사"),
+      screen: MenuScreen,
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
           <TabBarIcon
@@ -36,9 +37,7 @@ const TabNavigation = createBottomTabNavigator(
   {
     tabBarOptions: {
       showLabel: false,
-      style: {
-        backgroundColor: "black"
-      }
+      style: {}
     }
   }
 );

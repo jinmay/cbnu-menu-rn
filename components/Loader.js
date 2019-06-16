@@ -5,7 +5,6 @@ import { ActivityIndicator } from "react-native";
 const Container = styled.View`
   flex: 1;
   justify-content: center;
-  background-color: black;
 `;
 
 export default () => (
