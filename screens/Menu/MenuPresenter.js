@@ -28,18 +28,28 @@ const WrapperView = styled.View`
 `;
 
 class MenuPresenter extends Component {
+  dormBtnHandler = dorm => {
+    console.log("will change menu");
+    this.props.onChangeDorm(dorm);
+  };
+
   render() {
-    const { loaded, main } = this.props;
+    const { dorm, loaded, main, yangsung, yangjin } = this.props;
 
     return loaded ? (
       <Container>
         <Upper />
         <Title>중문기숙사</Title>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <MenuCard main={main} />
+          <MenuCard
+            dorm={dorm}
+            main={main}
+            yangsung={yangsung}
+            yangjin={yangjin}
+          />
         </ScrollView>
         <WrapperView>
-          <DormBtnList />
+          <DormBtnList onChange={this.dormBtnHandler} />
         </WrapperView>
       </Container>
     ) : (

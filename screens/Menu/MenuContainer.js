@@ -4,6 +4,7 @@ import { menu } from "../../api/api";
 
 export default class MenuContainer extends Component {
   state = {
+    dorm: "main",
     loaded: false,
     main: null,
     yangsung: null,
@@ -14,14 +15,8 @@ export default class MenuContainer extends Component {
     let main, yangsung, yangjin;
     try {
       ({
-        data: { main: main }
+        data: { main: main, yangsung: yangsung, yangjin: yangjin }
       } = await menu.getToday());
-      // ({
-      //   data: { main: yangsung }
-      // } = await menu.getToday());
-      // ({
-      //   data: { main: yangjin }
-      // } = await menu.getToday());
     } catch (e) {
       console.log(e);
     } finally {
@@ -29,14 +24,23 @@ export default class MenuContainer extends Component {
     }
   }
 
+  changeDorm = dorm => {
+    this.setState({
+      ...this.state,
+      dorm: dorm
+    });
+  };
+
   render() {
-    const { loaded, main, yangsung, yangjin } = this.state;
+    const { loaded, main, yangsung, yangjin, dorm } = this.state;
     return (
       <MenuPresenter
+        dorm={dorm}
         loaded={loaded}
         main={main}
         yangsung={yangsung}
         yangjin={yangjin}
+        onChangeDorm={this.changeDorm}
       />
     );
   }

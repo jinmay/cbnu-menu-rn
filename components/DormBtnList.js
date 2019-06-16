@@ -20,15 +20,30 @@ const DormBtn = styled.TouchableOpacity`
   border-radius: 10px;
 `;
 
-const DormBtnList = () => (
+const DormBtnList = ({ onChange }) => (
   <ListView>
-    <DormBtn>
+    <DormBtn
+      onPress={() => {
+        console.log("clicked 중문기숙사");
+        onChange("main");
+      }}
+    >
       <Text>⚡️중문기숙사</Text>
     </DormBtn>
-    <DormBtn>
+    <DormBtn
+      onPress={() => {
+        console.log("clicked 양성재");
+        onChange("yangsung");
+      }}
+    >
       <Text>✨양성재</Text>
     </DormBtn>
-    <DormBtn>
+    <DormBtn
+      onPress={() => {
+        console.log("clicked 양진재");
+        onChange("yangjin");
+      }}
+    >
       <Text>💫양진재</Text>
     </DormBtn>
   </ListView>
