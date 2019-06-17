@@ -1,5 +1,4 @@
 import React from "react";
-import { Text } from "react-native";
 import styled from "styled-components";
 
 const ListView = styled.View`
@@ -16,8 +15,11 @@ const DormBtn = styled.TouchableOpacity`
   align-items: center;
   height: 40px;
   width: 100px;
-  /* border: 1px solid red; */
   border-radius: 10px;
+`;
+
+const DormText = styled.Text`
+  font-family: bmjua;
 `;
 
 const DormBtnList = ({ onChange }) => (
@@ -28,7 +30,7 @@ const DormBtnList = ({ onChange }) => (
         onChange("main");
       }}
     >
-      <Text>💁‍️중문기숙사</Text>
+      <DormText>💁‍️중문기숙사</DormText>
     </DormBtn>
     <DormBtn
       onPress={() => {
@@ -36,7 +38,7 @@ const DormBtnList = ({ onChange }) => (
         onChange("yangsung");
       }}
     >
-      <Text>💁‍♂️양성재</Text>
+      <DormText>💁‍♂️양성재</DormText>
     </DormBtn>
     <DormBtn
       onPress={() => {
@@ -44,7 +46,7 @@ const DormBtnList = ({ onChange }) => (
         onChange("yangjin");
       }}
     >
-      <Text>🕵️‍양진재</Text>
+      <DormText>🕵️‍양진재</DormText>
     </DormBtn>
   </ListView>
 );

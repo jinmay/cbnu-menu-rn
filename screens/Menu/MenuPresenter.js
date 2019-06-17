@@ -20,18 +20,16 @@ const Upper = styled.View`
   /* background-color: red; */
 `;
 
-const TimeImage = styled.Image`
-  /* height: 50%; */
-`;
-
 const Day = styled.Text`
   margin-left: 13px;
+  font-family: bmjua;
 `;
 
 const Title = styled.Text`
   font-size: 20px;
   font-weight: 600;
   margin-left: 13px;
+  font-family: bmjua;
 `;
 
 const ScrollView = styled.ScrollView``;

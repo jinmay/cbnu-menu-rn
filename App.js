@@ -1,6 +1,6 @@
 import React from "react";
-import { AppLoading, Font, Asset } from "expo";
 import { StatusBar } from "react-native";
+import { AppLoading, Font, Asset } from "expo";
 import { Ionicons } from "@expo/vector-icons";
 import MainNavigation from "./navigation/MainNavigation";
 
@@ -15,7 +15,9 @@ export default class App extends React.Component {
 
   loadAssets = async () => {
     await Font.loadAsync({
-      ...Ionicons.font
+      ...Ionicons.font,
+      bmjua: require("./assets/bmjua.ttf"),
+      bmdh: require("./assets/bmdh.ttf")
     });
     await Asset.loadAsync([]);
   };
@@ -23,7 +25,12 @@ export default class App extends React.Component {
   render() {
     const { loaded } = this.state;
     if (loaded) {
-      return <MainNavigation />;
+      return (
+        <>
+          <StatusBar barStyle={"dark-content"} />
+          <MainNavigation />
+        </>
+      );
     } else {
       return (
         <AppLoading
