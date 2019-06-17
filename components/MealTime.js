@@ -10,7 +10,7 @@ const Title = styled.Text`
 `;
 
 const TimeTable = styled.View`
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: 13px;
   flex-direction: row;
 `;
@@ -22,6 +22,7 @@ const ColumnView = styled.View`
 
 const Week = styled.Text`
   font-weight: 600;
+  margin-bottom: 3px;
 `;
 
 const WeekDayTime = () => (

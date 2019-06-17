@@ -84,6 +84,7 @@ class MenuPresenter extends Component {
               routeName: "Detail",
               params: {
                 dorm: this.getDormName(dorm)
+                // dorm: dorm
               }
             })
           }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DetailPresenter from "./DetailPresenter";
+import { menu } from "../../api/api";
 
 class DetailContainer extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -19,13 +20,37 @@ class DetailContainer extends Component {
     } = props;
 
     this.state = {
-      dorm
+      loaded: false,
+      dorm,
+      main: null,
+      yangsung: null,
+      yangjin: null
     };
   }
 
+  async componentDidMount() {
+    let main, yangsung, yangjin;
+    try {
+      ({ data: main } = await menu.getMain());
+      ({ data: yangsung } = await menu.getYangSung());
+      ({ data: yangjin } = await menu.getYangJin());
+    } catch (e) {
+      console.log(e);
+    } finally {
+      this.setState({ loaded: true, main, yangsung, yangjin });
+    }
+  }
+
   render() {
-    const { dorm } = this.state;
-    return <DetailPresenter dorm={dorm} />;
+    const { loaded, main, yangsung, yangjin } = this.state;
+    return (
+      <DetailPresenter
+        loaded={loaded}
+        main={main}
+        yangsung={yangsung}
+        yangjin={yangjin}
+      />
+    );
   }
 }
 
