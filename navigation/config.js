@@ -5,13 +5,11 @@ export const createStack = (screen, title) =>
     Screen: {
       screen,
       navigationOptions: {
-        // title,
+        title,
         headerStyle: {
           borderBottomWidth: 0
         },
-        headerTitleStyle: {
-          // color: "white"
-        }
+        headerTitleStyle: {}
       }
     }
   });

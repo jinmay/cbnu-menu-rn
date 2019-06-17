@@ -1,14 +1,27 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { withNavigation } from "react-navigation";
 import Loader from "../../components/Loader";
 import MenuCard from "../../components/MenuCard";
 import DormBtnList from "../../components/DormBtnList";
+import MealTime from "../../components/MealTime";
+
+const ScrollContainer = styled.ScrollView``;
 
 const Container = styled.View``;
 
 const Upper = styled.View`
-  flex-grow: 10;
-  height: 38%;
+  /* flex-grow: 10; */
+  /* height: 38%; */
+  /* margin-bottom: 60%; */
+  /* align-items: center; */
+  margin-top: 50px;
+  margin-bottom: 60px;
+  /* background-color: red; */
+`;
+
+const TimeImage = styled.Image`
+  /* height: 50%; */
 `;
 
 const Day = styled.Text`
@@ -22,6 +35,8 @@ const Title = styled.Text`
 `;
 
 const ScrollView = styled.ScrollView``;
+
+const DetailDorm = styled.TouchableOpacity``;
 
 const WrapperView = styled.View`
   width: 100%;
@@ -39,23 +54,45 @@ class MenuPresenter extends Component {
 
   getDormName = dorm => {
     if (dorm == "main") {
-      return "중문기숙사";
+      return "중문기숙사🚀";
     } else if (dorm == "yangsung") {
-      return "양성재";
+      return "양성재🐶";
     } else if (dorm == "yangjin") {
-      return "양진재";
+      return "양진재🦄";
     }
   };
 
   render() {
-    const { dorm, day, loaded, main, yangsung, yangjin } = this.props;
+    const {
+      dorm,
+      day,
+      loaded,
+      main,
+      yangsung,
+      yangjin,
+      navigation
+    } = this.props;
     const dormName = this.getDormName(dorm);
 
     return loaded ? (
-      <Container>
-        <Upper />
-        <Day>{day}</Day>
-        <Title>{dormName}</Title>
+      <ScrollContainer showsHorizontalScrollIndicator={false}>
+        {/* <Container> */}
+        <Upper>
+          <MealTime />
+        </Upper>
+        <DetailDorm
+          onPress={() =>
+            navigation.navigate({
+              routeName: "Detail",
+              params: {
+                dorm: this.getDormName(dorm)
+              }
+            })
+          }
+        >
+          <Day>{day}</Day>
+          <Title>{dormName}</Title>
+        </DetailDorm>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <MenuCard
             dorm={dorm}
@@ -67,11 +104,12 @@ class MenuPresenter extends Component {
         <WrapperView>
           <DormBtnList onChange={this.dormBtnHandler} />
         </WrapperView>
-      </Container>
+        {/* </Container> */}
+      </ScrollContainer>
     ) : (
       <Loader />
     );
   }
 }
 
-export default MenuPresenter;
+export default withNavigation(MenuPresenter);

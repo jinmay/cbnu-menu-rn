@@ -1,6 +1,6 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import TabNavigation from "./TabNavigation";
-import DetailScreen from "../screens/detail";
+import DetailScreen from "../screens/Detail";
 
 const MainNavigation = createStackNavigator(
   {

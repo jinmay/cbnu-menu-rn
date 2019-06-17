@@ -4,12 +4,10 @@ import { createBottomTabNavigator, createAppContainer } from "react-navigation";
 import MenuScreen from "../screens/Menu";
 import WeatherScreen from "../screens/Weather";
 import TabBarIcon from "../components/TabBarIcon";
-import { createStack } from "./config";
 
 const TabNavigation = createBottomTabNavigator(
   {
     Menu: {
-      // screen: createStack(MenuScreen, "기숙사"),
       screen: MenuScreen,
       navigationOptions: {
         tabBarIcon: ({ focused }) => (
