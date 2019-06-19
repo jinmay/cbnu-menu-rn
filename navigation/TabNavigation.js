@@ -17,20 +17,20 @@ const TabNavigation = createBottomTabNavigator(
           />
         )
       }
-    },
-    Weather: {
-      screen: WeatherScreen,
-      navigationOptions: {
-        tabBarIcon: ({ focused }) => (
-          <TabBarIcon
-            name={
-              Platform.OS === "ios" ? "ios-partly-sunny" : "md-partly-sunny"
-            }
-            focused={focused}
-          />
-        )
-      }
     }
+    // Weather: {
+    //   screen: WeatherScreen,
+    //   navigationOptions: {
+    //     tabBarIcon: ({ focused }) => (
+    //       <TabBarIcon
+    //         name={
+    //           Platform.OS === "ios" ? "ios-partly-sunny" : "md-partly-sunny"
+    //         }
+    //         focused={focused}
+    //       />
+    //     )
+    //   }
+    // }
   },
   {
     tabBarOptions: {
