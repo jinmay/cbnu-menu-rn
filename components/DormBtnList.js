@@ -1,4 +1,5 @@
 import React from "react";
+import { Platform } from "react-native";
 import styled from "styled-components";
 
 const ListView = styled.View`
@@ -36,7 +37,7 @@ const DormBtnList = ({ onChange }) => (
         onChange("yangsung");
       }}
     >
-      <DormText>💁‍♂️양성재</DormText>
+      <DormText>{Platform.OS === "ios" ? "💁‍♂️" : "🙋‍"}양성재</DormText>
     </DormBtn>
     <DormBtn
       onPress={() => {

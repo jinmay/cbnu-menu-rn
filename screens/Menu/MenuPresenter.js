@@ -52,9 +52,9 @@ class MenuPresenter extends Component {
     if (dorm == "main") {
       return "중문기숙사🚀";
     } else if (dorm == "yangsung") {
-      return "양성재🐶";
+      return "양성재🚀";
     } else if (dorm == "yangjin") {
-      return "양진재🦄";
+      return "양진재🚀";
     }
   };
 
