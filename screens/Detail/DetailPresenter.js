@@ -37,7 +37,7 @@ class DetailPresenter extends Component {
 
       return (
         <ThemeProvider theme={theme}>
-          <ScrollColumn showsHorizontalScrollIndicator={false}>
+          <ScrollColumn showsVerticalScrollIndicator={false}>
             {menus}
           </ScrollColumn>
         </ThemeProvider>
