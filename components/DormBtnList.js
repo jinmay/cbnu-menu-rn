@@ -26,7 +26,6 @@ const DormBtnList = ({ onChange }) => (
   <ListView>
     <DormBtn
       onPress={() => {
-        console.log("clicked 중문기숙사");
         onChange("main");
       }}
     >
@@ -34,7 +33,6 @@ const DormBtnList = ({ onChange }) => (
     </DormBtn>
     <DormBtn
       onPress={() => {
-        console.log("clicked 양성재");
         onChange("yangsung");
       }}
     >
@@ -42,7 +40,6 @@ const DormBtnList = ({ onChange }) => (
     </DormBtn>
     <DormBtn
       onPress={() => {
-        console.log("clicked 양진재");
         onChange("yangjin");
       }}
     >
