@@ -5,7 +5,7 @@ import { menu } from "../../api/api";
 class DetailContainer extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: navigation.getParam("dorm")
+      title: navigation.getParam("display_dorm")
     };
   };
 
@@ -42,10 +42,11 @@ class DetailContainer extends Component {
   }
 
   render() {
-    const { loaded, main, yangsung, yangjin } = this.state;
+    const { loaded, dorm, main, yangsung, yangjin } = this.state;
     return (
       <DetailPresenter
         loaded={loaded}
+        dorm={dorm}
         main={main}
         yangsung={yangsung}
         yangjin={yangjin}

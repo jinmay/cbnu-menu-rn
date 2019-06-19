@@ -27,7 +27,6 @@ const Day = styled.Text`
 
 const Title = styled.Text`
   font-size: 20px;
-  font-weight: 600;
   margin-left: 13px;
   font-family: bmjua;
 `;
@@ -46,7 +45,6 @@ const WrapperView = styled.View`
 
 class MenuPresenter extends Component {
   dormBtnHandler = dorm => {
-    console.log("will change menu");
     this.props.onChangeDorm(dorm);
   };
 
@@ -83,8 +81,8 @@ class MenuPresenter extends Component {
             navigation.navigate({
               routeName: "Detail",
               params: {
-                dorm: this.getDormName(dorm)
-                // dorm: dorm
+                display_dorm: this.getDormName(dorm),
+                dorm: dorm
               }
             })
           }

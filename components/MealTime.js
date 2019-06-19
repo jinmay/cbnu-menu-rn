@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const Title = styled.Text`
   font-size: 20px;
-  font-weight: 600;
   margin-left: 13px;
   font-family: bmjua;
 `;

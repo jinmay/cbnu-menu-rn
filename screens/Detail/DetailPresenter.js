@@ -16,17 +16,29 @@ const ScrollColumn = styled.ScrollView`
 `;
 
 class DetailPresenter extends Component {
+  selectDorm = dorm => {
+    const { main, yangsung, yangjin } = this.props;
+    if (dorm == "main") {
+      return main;
+    } else if (dorm == "yangsung") {
+      return yangsung;
+    } else if (dorm == "yangjin") {
+      return yangjin;
+    }
+  };
+
   render() {
-    const { loaded, main, yangsung, yangjin } = this.props;
+    const { loaded, dorm } = this.props;
     if (loaded) {
-      const main_menus = main.map(day => (
+      const selectedDorm = this.selectDorm(dorm);
+      const menus = selectedDorm.map(day => (
         <WeekMenuCard day={day} key={day.id} />
       ));
 
       return (
         <ThemeProvider theme={theme}>
           <ScrollColumn showsHorizontalScrollIndicator={false}>
-            {main_menus}
+            {menus}
           </ScrollColumn>
         </ThemeProvider>
       );
