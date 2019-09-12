@@ -4,9 +4,21 @@ import { createBottomTabNavigator, createAppContainer } from "react-navigation";
 import MenuScreen from "../screens/Menu";
 import WeatherScreen from "../screens/Weather";
 import TabBarIcon from "../components/TabBarIcon";
+import NoticeScreen from "../screens/Notice";
 
 const TabNavigation = createBottomTabNavigator(
   {
+    // Notice: {
+    //   screen: NoticeScreen,
+    //   navigationOptions: {
+    //     tabBarIcon: ({ focused }) => (
+    //       <TabBarIcon
+    //         name={Platform.OS === "ios" ? "ios-paper" : "md-paper"}
+    //         focused={focused}
+    //       />
+    //     )
+    //   }
+    // },
     Menu: {
       screen: MenuScreen,
       navigationOptions: {
