@@ -1,44 +1,40 @@
-import React from "react";
-import { StatusBar } from "react-native";
-import { AppLoading, Font, Asset } from "expo";
-import { Ionicons } from "@expo/vector-icons";
-import MainNavigation from "./navigation/MainNavigation";
+import React from 'react';
+import { StatusBar } from 'react-native';
+import { AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
+import * as Font from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
+import MainNavigation from './navigation/MainNavigation';
 
 export default class App extends React.Component {
-  state = {
-    loaded: false
-  };
+	state = {
+		loaded: false,
+	};
 
-  handleError = e => console.log(e);
+	handleError = e => console.log(e);
 
-  handleLoaded = () => this.setState({ loaded: true });
+	handleLoaded = () => this.setState({ loaded: true });
 
-  loadAssets = async () => {
-    await Font.loadAsync({
-      ...Ionicons.font,
-      bmjua: require("./assets/bmjua.ttf"),
-      bmdh: require("./assets/bmdh.ttf")
-    });
-    await Asset.loadAsync([]);
-  };
+	loadAssets = async () => {
+		await Font.loadAsync({
+			...Ionicons.font,
+			bmjua: require('./assets/bmjua.ttf'),
+			bmdh: require('./assets/bmdh.ttf'),
+		});
+		await Asset.loadAsync([]);
+	};
 
-  render() {
-    const { loaded } = this.state;
-    if (loaded) {
-      return (
-        <>
-          <StatusBar barStyle={"dark-content"} />
-          <MainNavigation />
-        </>
-      );
-    } else {
-      return (
-        <AppLoading
-          startAsync={this.loadAssets}
-          onFinish={this.handleLoaded}
-          onError={this.handleError}
-        />
-      );
-    }
-  }
+	render() {
+		const { loaded } = this.state;
+		if (loaded) {
+			return (
+				<>
+					<StatusBar barStyle={'dark-content'} />
+					<MainNavigation />
+				</>
+			);
+		} else {
+			return <AppLoading startAsync={this.loadAssets} onFinish={this.handleLoaded} onError={this.handleError} />;
+		}
+	}
 }
