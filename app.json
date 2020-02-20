@@ -8,7 +8,7 @@
       "ios",
       "android"
     ],
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -25,7 +25,8 @@
       "supportsTablet": false
     },
     "android": {
-      "package": "tk.jinmay.bob"
+      "package": "tk.jinmay.bob",
+      "versionCode": 2
     },
     "description": "충북대 기숙사생들의 식단 ‘ㅂ’ 입니다!"
   }
